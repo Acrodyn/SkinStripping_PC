@@ -22,5 +22,6 @@ void ASS_NPC::Tick(float DeltaTime)
 void ASS_NPC::SetMood(NPCMood mood)
 {
 	Mood = mood;
+	OnMoodChanged();
 }
 // ----------------------------------------------------------------------------

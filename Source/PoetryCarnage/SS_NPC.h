@@ -27,4 +27,9 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "NPC")
 		NPCMood Mood = NPCMood::None;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "NPC")
+		class USS_NPCData* NPCData;
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void OnMoodChanged();
 };
