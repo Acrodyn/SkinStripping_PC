@@ -17,6 +17,9 @@ class POETRYCARNAGE_API USS_NPCData : public UDataAsset
 
 public:
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mood")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "NPC")
 		TMap<NPCMood, UMaterialInterface*> MoodRepresentations;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "NPC")
+		NPCNames Name;
 };

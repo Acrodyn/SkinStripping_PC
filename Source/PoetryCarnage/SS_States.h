@@ -14,3 +14,12 @@ enum class NPCMood : uint8
 	Angry = 4,
 	Worried = 5,
 };
+
+UENUM(BlueprintType)
+enum class NPCNames : uint8
+{
+	None = 0,
+	Girlfriend = 1,
+	PatronMain = 2,
+	PatronSecondary = 3,
+};
