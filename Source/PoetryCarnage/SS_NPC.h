@@ -28,7 +28,16 @@ public:
 		NPCMood Mood = NPCMood::None;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "NPC")
+		NPCNames NPCName = NPCNames::None;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "NPC")
 		class USS_NPCData* NPCData;
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+		void SetDialogue(const FText& text);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+		void ClearDialogue();
 
 	UFUNCTION(BlueprintImplementableEvent)
 		void OnMoodChanged();
