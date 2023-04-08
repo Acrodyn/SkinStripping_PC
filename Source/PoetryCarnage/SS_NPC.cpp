@@ -25,3 +25,8 @@ void ASS_NPC::SetMood(NPCMood mood)
 	OnMoodChanged();
 }
 // ----------------------------------------------------------------------------
+void ASS_NPC::TagReceived_Implementation(GameTags tag)
+{
+
+}
+// ----------------------------------------------------------------------------

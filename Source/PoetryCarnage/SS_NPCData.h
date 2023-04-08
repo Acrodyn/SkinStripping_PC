@@ -7,6 +7,8 @@
 #include "SS_States.h"
 #include "SS_NPCData.generated.h"
 
+class USS_Scenario;
+
 /**
  * 
  */
@@ -22,4 +24,7 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "NPC")
 		NPCNames Name;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "NPC")
+		USS_Scenario* NPCScenario;
 };

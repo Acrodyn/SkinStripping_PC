@@ -41,4 +41,8 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent)
 		void OnMoodChanged();
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+		void TagReceived(GameTags tag);
+		virtual void TagReceived_Implementation(GameTags tag);
 };

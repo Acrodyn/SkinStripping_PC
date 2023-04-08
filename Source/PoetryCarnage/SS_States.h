@@ -23,3 +23,16 @@ enum class NPCNames : uint8
 	PatronMain = 2,
 	PatronSecondary = 3,
 };
+
+UENUM(BlueprintType)
+enum class ObjectOfInterest : uint8
+{
+	None = 0,
+};
+
+UENUM(BlueprintType)
+enum class GameTags : uint8
+{
+	None = 0,
+	TestTag = 1,
+};
