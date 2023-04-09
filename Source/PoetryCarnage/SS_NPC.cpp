@@ -30,7 +30,7 @@ void ASS_NPC::SetMood(NPCMood newMood)
 // ----------------------------------------------------------------------------
 void ASS_NPC::RefreshDialogues()
 {
-	int a = 0;
+	
 }
 // ----------------------------------------------------------------------------
 void ASS_NPC::TagReceived_Implementation(GameTags tag)

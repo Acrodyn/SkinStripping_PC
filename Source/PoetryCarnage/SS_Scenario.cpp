@@ -20,16 +20,17 @@ USS_DialogueSet* USS_Scenario::GetNextSet()
 
 		if (nextSet->Behaviour == DialogueBehaviour::Repeatable)
 		{
-			_repeatableSets.Add(nextSet);
+			_repeatableSets.AddUnique(nextSet);
 		}
 	}
 	else if (!_repeatableSets.IsEmpty())
 	{
 		nextSet = GetRandomSet(_repeatableSets, false);
+		nextSet->Reset();
 	}
 
 	// We don't want two in a row
-	if (nextSet == _lastSet)
+	if (nextSet == nullptr || nextSet == _lastSet)
 	{
 		return nullptr;
 	}
@@ -37,7 +38,7 @@ USS_DialogueSet* USS_Scenario::GetNextSet()
 	// Repeatables should never expire
 	if (nextSet->Behaviour != DialogueBehaviour::Repeatable)
 	{
-		_expiredSets.Add(nextSet);
+		_expiredSets.AddUnique(nextSet);
 	}
 
 	_lastSet = nextSet;
@@ -56,11 +57,11 @@ void USS_Scenario::UpdateSetAvailability(const ASS_GameMode* gameMode)
 
 		if (set->Behaviour == DialogueBehaviour::Priority)
 		{
-			_prioritySets.Add(set);
+			_prioritySets.AddUnique(set);
 		}
-		else
+		else if (!_repeatableSets.Contains(set))
 		{
-			_defeaultSets.Add(set);
+			_defeaultSets.AddUnique(set);
 		}
 	}
 }

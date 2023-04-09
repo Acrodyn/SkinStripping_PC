@@ -20,6 +20,9 @@ public:
 		float StartWait = 1.f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		float Duration = 5.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 		float EndWait = 0.f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)

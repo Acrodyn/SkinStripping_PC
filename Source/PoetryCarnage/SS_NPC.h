@@ -30,11 +30,14 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "NPC")
 		class USS_NPCData* NPCData;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "NPC")
+	UPROPERTY(BlueprintReadWrite, Category = "NPC")
 		class USS_DialogueSet* ActiveDialogueSet;
 
 	UFUNCTION(BlueprintCallable)
 		void SetMood(NPCMood newMood);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+		void StartScenario();
 
 	UFUNCTION(BlueprintCallable)
 		void RefreshDialogues();

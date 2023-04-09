@@ -27,9 +27,6 @@ public:
 	UPROPERTY(BlueprintAssignable)
 		FOnTagReceivedDelegate OnTagReceived;
 
-	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
-		void StartScenarios();
-
 	UFUNCTION(BlueprintCallable)
 		void AddTag(GameTags tag);
 
