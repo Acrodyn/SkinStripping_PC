@@ -3,16 +3,36 @@
 
 #include "SS_GameMode.h"
 
+// ----------------------------------------------------------------------------
 void ASS_GameMode::AddTag(GameTags tag)
 {
-	if (!HasTag(tag))
+	if (!HasGameTag(tag))
 	{
-		AcquiredTags.Add(tag);
+		AcquiredGameTags.Add(tag);
 		OnTagReceived.Broadcast(tag);
 	}
 }
-
-bool ASS_GameMode::HasTag(GameTags tag)
+// ----------------------------------------------------------------------------
+bool ASS_GameMode::HasGameTag(GameTags tag) const
 {
-	return AcquiredTags.Contains(tag);
+	return AcquiredGameTags.Contains(tag);
 }
+// ----------------------------------------------------------------------------
+bool ASS_GameMode::HasGameTags(const TArray<GameTags>& tagList) const
+{
+	for (auto tag : tagList)
+	{
+		if (tag == GameTags::None)
+		{
+			continue;
+		}
+
+		if (!HasGameTag(tag))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+// ----------------------------------------------------------------------------

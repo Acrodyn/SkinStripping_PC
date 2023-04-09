@@ -22,6 +22,7 @@ enum class NPCNames : uint8
 	Girlfriend = 1,
 	PatronMain = 2,
 	PatronSecondary = 3,
+	Main = 4,
 };
 
 UENUM(BlueprintType)
@@ -35,4 +36,12 @@ enum class GameTags : uint8
 {
 	None = 0,
 	TestTag = 1,
+};
+
+UENUM(BlueprintType)
+enum class DialogueBehaviour : uint8
+{
+	None = 0,
+	Priority = 1,
+	Repeatable = 2,
 };

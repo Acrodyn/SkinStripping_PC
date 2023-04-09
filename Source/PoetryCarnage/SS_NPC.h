@@ -21,9 +21,6 @@ protected:
 public:	
 	virtual void Tick(float DeltaTime) override;
 
-	UFUNCTION(BlueprintCallable)
-		void SetMood(NPCMood mood);
-
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "NPC")
 		NPCMood Mood = NPCMood::None;
 
@@ -32,6 +29,15 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "NPC")
 		class USS_NPCData* NPCData;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "NPC")
+		class USS_DialogueSet* ActiveDialogueSet;
+
+	UFUNCTION(BlueprintCallable)
+		void SetMood(NPCMood newMood);
+
+	UFUNCTION(BlueprintCallable)
+		void RefreshDialogues();
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
 		void SetDialogue(const FText& text);

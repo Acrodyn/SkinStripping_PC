@@ -19,10 +19,18 @@ void ASS_NPC::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 // ----------------------------------------------------------------------------
-void ASS_NPC::SetMood(NPCMood mood)
+void ASS_NPC::SetMood(NPCMood newMood)
 {
-	Mood = mood;
-	OnMoodChanged();
+	if (Mood != newMood)
+	{
+		Mood = newMood;
+		OnMoodChanged();
+	}
+}
+// ----------------------------------------------------------------------------
+void ASS_NPC::RefreshDialogues()
+{
+	int a = 0;
 }
 // ----------------------------------------------------------------------------
 void ASS_NPC::TagReceived_Implementation(GameTags tag)

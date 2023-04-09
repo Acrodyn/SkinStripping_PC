@@ -11,26 +11,29 @@
  * 
  */
 UCLASS()
-class POETRYCARNAGE_API USS_Scenario : public UDataAsset
+class POETRYCARNAGE_API USS_Scenario : public UPrimaryDataAsset
 {
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "NPC")
-		TArray<USS_DialogueSet*> DefaultSnippets;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "NPC")
-		TArray<USS_DialogueSet*> PrioritySnippets;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		TArray<USS_DialogueSet*> DialogueSets;
 
 	UFUNCTION(BlueprintCallable)
-		USS_DialogueSet* GetNextSnippet();
+		USS_DialogueSet* GetNextSet();
 
 	UFUNCTION(BlueprintCallable)
-		USS_DialogueSet* GetActiveSnippet();
+		void UpdateSetAvailability(const ASS_GameMode* gameMode);
+
+	UFUNCTION(BlueprintCallable)
+		void Reset();
 
 private:
-	TQueue<USS_DialogueSet*> DefeaultSnippetQueue;
-	TQueue<USS_DialogueSet*> PrioritySnippetQueue;
+	TArray<USS_DialogueSet*> _defeaultSets;
+	TArray<USS_DialogueSet*> _prioritySets;
+	TArray<USS_DialogueSet*> _repeatableSets;
+	TArray<USS_DialogueSet*> _expiredSets;
+	USS_DialogueSet* _lastSet = nullptr;
 
-	USS_DialogueSet* ActiveSnippet;
+	USS_DialogueSet* GetRandomSet(TArray<USS_DialogueSet*>& List, bool removeEntry = true);
 };

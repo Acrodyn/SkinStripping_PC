@@ -10,8 +10,8 @@
 /**
  * 
  */
-UCLASS()
-class POETRYCARNAGE_API USS_DialogueSnippet : public UDataAsset
+USTRUCT(BlueprintType)
+struct FSS_DialogueSnippet
 {
 	GENERATED_BODY()
 

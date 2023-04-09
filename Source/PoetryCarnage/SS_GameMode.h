@@ -22,7 +22,7 @@ public:
 		TMap<NPCNames, class ASS_NPC*> NPCHolder;
 
 	UPROPERTY(BlueprintReadOnly)
-		TArray<GameTags> AcquiredTags;
+		TArray<GameTags> AcquiredGameTags;
 
 	UPROPERTY(BlueprintAssignable)
 		FOnTagReceivedDelegate OnTagReceived;
@@ -34,5 +34,8 @@ public:
 		void AddTag(GameTags tag);
 
 	UFUNCTION(BlueprintCallable)
-		bool HasTag(GameTags tag);
+		bool HasGameTag(GameTags tag) const;
+
+	UFUNCTION(BlueprintCallable)
+		bool HasGameTags(const TArray<GameTags>& tagList) const;
 };

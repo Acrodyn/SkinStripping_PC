@@ -11,17 +11,26 @@
  * 
  */
 UCLASS()
-class POETRYCARNAGE_API USS_DialogueSet : public UDataAsset
+class POETRYCARNAGE_API USS_DialogueSet : public UPrimaryDataAsset
 {
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "NPC")
-		TArray<USS_DialogueSnippet*> Snippets;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		TArray<GameTags> MandatoryTags;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		DialogueBehaviour Behaviour;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		TArray<FSS_DialogueSnippet> Snippets;
 
 	UFUNCTION(BlueprintCallable)
-		USS_DialogueSnippet* GetNextSnippet();
+		bool GetNextSnippet(FSS_DialogueSnippet& snippet);
+
+	UFUNCTION(BlueprintCallable)
+		void Reset();
 
 private:
-	int _currentSnippet = 0;
+		int _currentSnippet = 0;
 };

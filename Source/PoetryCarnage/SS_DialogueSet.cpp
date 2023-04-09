@@ -3,12 +3,21 @@
 
 #include "SS_DialogueSet.h"
 
-USS_DialogueSnippet* USS_DialogueSet::GetNextSnippet()
+// ----------------------------------------------------------------------------
+bool USS_DialogueSet::GetNextSnippet(FSS_DialogueSnippet& snippet)
 {
 	if (!Snippets.IsValidIndex(_currentSnippet))
 	{
-		return nullptr;
+		return false;
 	}
 	
-	return Snippets[_currentSnippet++];
+	snippet = Snippets[_currentSnippet++];
+
+	return true;
 }
+// ----------------------------------------------------------------------------
+void USS_DialogueSet::Reset()
+{
+	_currentSnippet = 0;
+}
+// ----------------------------------------------------------------------------
