@@ -24,4 +24,10 @@ public:
 public:
 	UPROPERTY(EditAnywhere, Category = "Input")
 		class UInputMappingContext* InputMapping;
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+		void FreezePlayer();
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+		void UnfreezePlayer();
 };

@@ -32,5 +32,8 @@ public:
 		NPCMood SpeakerMood;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		SnippetQuirks Quirk;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 		FText DialogueText;
 };

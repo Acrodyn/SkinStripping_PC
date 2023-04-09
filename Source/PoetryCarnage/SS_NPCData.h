@@ -27,4 +27,7 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "NPC")
 		USS_Scenario* NPCScenario;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "NPC")
+		bool CanBlockMain = false;
 };

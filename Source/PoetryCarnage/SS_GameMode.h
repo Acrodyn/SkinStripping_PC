@@ -19,6 +19,9 @@ class POETRYCARNAGE_API ASS_GameMode : public AGameModeBase
 
 public:
 	UPROPERTY(BlueprintReadWrite)
+		class ASS_PlayerCharacter* PlayerHolder;
+
+	UPROPERTY(BlueprintReadWrite)
 		TMap<NPCNames, class ASS_NPC*> NPCHolder;
 
 	UPROPERTY(BlueprintReadOnly)

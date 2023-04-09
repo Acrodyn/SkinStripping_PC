@@ -45,3 +45,11 @@ enum class DialogueBehaviour : uint8
 	Priority = 1,
 	Repeatable = 2,
 };
+
+UENUM(BlueprintType)
+enum class SnippetQuirks : uint8
+{
+	None = 0,
+	FreezeUntilEndOfSet = 1,
+	FreezeUntilEndOfSnippet = 2,
+};
