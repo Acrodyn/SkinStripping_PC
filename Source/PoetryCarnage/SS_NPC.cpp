@@ -21,7 +21,7 @@ void ASS_NPC::Tick(float DeltaTime)
 // ----------------------------------------------------------------------------
 void ASS_NPC::SetMood(NPCMood newMood)
 {
-	if (Mood != newMood)
+	if (Mood != newMood && newMood != NPCMood::None)
 	{
 		Mood = newMood;
 		OnMoodChanged();

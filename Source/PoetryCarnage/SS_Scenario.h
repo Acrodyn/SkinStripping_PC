@@ -33,6 +33,8 @@ private:
 	TArray<USS_DialogueSet*> _prioritySets;
 	TArray<USS_DialogueSet*> _repeatableSets;
 	TArray<USS_DialogueSet*> _expiredSets;
+
+	// This will create bugs if multiple characters are using the same scenario
 	USS_DialogueSet* _lastSet = nullptr;
 
 	USS_DialogueSet* GetRandomSet(TArray<USS_DialogueSet*>& List, bool removeEntry = true);

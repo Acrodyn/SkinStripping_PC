@@ -32,5 +32,6 @@ public:
 		void Reset();
 
 private:
+	// This will create bugs if multiple characters are using the same sets
 		int _currentSnippet = 0;
 };

@@ -17,16 +17,19 @@ struct FSS_DialogueSnippet
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-		float StartWait = 1.f;
+		float StartWait = 0.8f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-		float Duration = 5.f;
+		float Duration = 3.f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-		float EndWait = 0.f;
+		float EndWait = 0.5f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 		NPCNames SpeakerName;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		NPCMood SpeakerMood;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 		FText DialogueText;
