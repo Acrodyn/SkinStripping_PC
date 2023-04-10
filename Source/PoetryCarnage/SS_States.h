@@ -35,7 +35,8 @@ UENUM(BlueprintType)
 enum class GameTags : uint8
 {
 	None = 0,
-	TestTag = 1,
+	OOI_Manequin = 1,
+	OOI_CandleObj = 2,
 };
 
 UENUM(BlueprintType)
