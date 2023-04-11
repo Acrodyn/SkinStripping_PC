@@ -45,6 +45,7 @@ enum class DialogueBehaviour : uint8
 	None = 0,
 	Priority = 1,
 	Repeatable = 2,
+	Triggerable = 3,
 };
 
 UENUM(BlueprintType)

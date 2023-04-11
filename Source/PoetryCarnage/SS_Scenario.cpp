@@ -46,6 +46,16 @@ USS_DialogueSet* USS_Scenario::GetNextSet()
 	return nextSet;
 }
 // ----------------------------------------------------------------------------
+USS_DialogueSet* USS_Scenario::GetTriggerableSet()
+{
+	if (_triggerableSets.IsEmpty())
+	{
+		return nullptr;
+	}
+
+	return GetRandomSet(_triggerableSets, false); // TODO: Incomplete logic, but good enough for this project
+}
+// ----------------------------------------------------------------------------
 void USS_Scenario::UpdateSetAvailability(const ASS_GameMode* gameMode)
 {
 	for (auto set : DialogueSets)
@@ -59,6 +69,10 @@ void USS_Scenario::UpdateSetAvailability(const ASS_GameMode* gameMode)
 		{
 			_prioritySets.AddUnique(set);
 		}
+		else if (set->Behaviour == DialogueBehaviour::Triggerable)
+		{
+			_triggerableSets.AddUnique(set);
+		}
 		else if (!_repeatableSets.Contains(set))
 		{
 			_defeaultSets.AddUnique(set);
@@ -71,6 +85,7 @@ void USS_Scenario::Reset()
 	_defeaultSets.Empty();
 	_prioritySets.Empty();
 	_repeatableSets.Empty();
+	_triggerableSets.Empty();
 	_expiredSets.Empty();
 	_lastSet = nullptr;
 

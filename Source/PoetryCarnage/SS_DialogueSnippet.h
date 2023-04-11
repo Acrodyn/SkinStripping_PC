@@ -26,7 +26,7 @@ public:
 		float EndWait = 0.5f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-		NPCNames SpeakerName;
+		NPCNames TriggerNPC;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 		NPCMood SpeakerMood;

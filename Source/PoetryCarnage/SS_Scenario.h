@@ -23,6 +23,9 @@ public:
 		USS_DialogueSet* GetNextSet();
 
 	UFUNCTION(BlueprintCallable)
+		USS_DialogueSet* GetTriggerableSet();
+
+	UFUNCTION(BlueprintCallable)
 		void UpdateSetAvailability(const ASS_GameMode* gameMode);
 
 	UFUNCTION(BlueprintCallable)
@@ -35,6 +38,7 @@ private:
 	TArray<USS_DialogueSet*> _defeaultSets;
 	TArray<USS_DialogueSet*> _prioritySets;
 	TArray<USS_DialogueSet*> _repeatableSets;
+	TArray<USS_DialogueSet*> _triggerableSets; // TODO: Incomplete logic, but good enough for this project
 	TArray<USS_DialogueSet*> _expiredSets;
 
 	// This will create bugs if multiple characters are using the same scenario
