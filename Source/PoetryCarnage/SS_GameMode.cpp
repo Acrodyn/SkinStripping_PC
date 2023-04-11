@@ -13,6 +13,14 @@ void ASS_GameMode::AddTag(GameTags tag)
 	}
 }
 // ----------------------------------------------------------------------------
+void ASS_GameMode::RemoveTag(GameTags tag)
+{
+	if (HasGameTag(tag))
+	{
+		AcquiredGameTags.Remove(tag);
+	}
+}
+// ----------------------------------------------------------------------------
 bool ASS_GameMode::HasGameTag(GameTags tag) const
 {
 	return AcquiredGameTags.Contains(tag);

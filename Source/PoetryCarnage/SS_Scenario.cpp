@@ -79,6 +79,10 @@ void USS_Scenario::Reset()
 		set->Reset();
 	}
 }
+bool USS_Scenario::HasPriorityQueued()
+{
+	return !_prioritySets.IsEmpty();
+}
 // ----------------------------------------------------------------------------
 USS_DialogueSet* USS_Scenario::GetRandomSet(TArray<USS_DialogueSet*>& List, bool removeEntry)
 {

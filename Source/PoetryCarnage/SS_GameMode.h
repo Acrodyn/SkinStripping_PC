@@ -34,6 +34,9 @@ public:
 		void AddTag(GameTags tag);
 
 	UFUNCTION(BlueprintCallable)
+		void RemoveTag(GameTags tag);
+
+	UFUNCTION(BlueprintCallable)
 		bool HasGameTag(GameTags tag) const;
 
 	UFUNCTION(BlueprintCallable)

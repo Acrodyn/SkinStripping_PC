@@ -28,6 +28,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 		void Reset();
 
+	UFUNCTION(BlueprintCallable)
+		bool HasPriorityQueued();
+
 private:
 	TArray<USS_DialogueSet*> _defeaultSets;
 	TArray<USS_DialogueSet*> _prioritySets;
