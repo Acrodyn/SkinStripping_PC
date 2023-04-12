@@ -23,6 +23,8 @@ enum class NPCNames : uint8
 	PatronMain = 2,
 	PatronSecondary = 3,
 	Main = 4,
+	Parasite1,
+	Parasite2
 };
 
 UENUM(BlueprintType)
