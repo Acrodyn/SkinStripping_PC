@@ -2,6 +2,7 @@
 
 
 #include "SS_GameMode.h"
+#include "SS_SettingsData.h"
 
 // ----------------------------------------------------------------------------
 void ASS_GameMode::AddTag(GameTags tag)
@@ -42,5 +43,18 @@ bool ASS_GameMode::HasGameTags(const TArray<GameTags>& tagList) const
 	}
 
 	return true;
+}
+// ----------------------------------------------------------------------------
+USS_SettingsData* ASS_GameMode::GetRelevantSettingsData()
+{
+	for (auto settings : ModeSettings)
+	{
+		if (settings->Mode == Mode)
+		{
+			return settings;
+		}
+	}
+
+	return nullptr;
 }
 // ----------------------------------------------------------------------------

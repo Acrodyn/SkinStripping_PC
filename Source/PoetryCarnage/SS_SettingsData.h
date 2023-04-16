@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
+#include "SS_States.h"
 #include "SS_SettingsData.generated.h"
 
 /**
@@ -15,6 +16,8 @@ class POETRYCARNAGE_API USS_SettingsData : public UDataAsset
 	GENERATED_BODY()
 
 public:
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		PlayMode Mode;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 		float DefaultMusicAudio = 1.f;

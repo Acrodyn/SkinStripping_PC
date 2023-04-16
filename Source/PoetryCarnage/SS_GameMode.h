@@ -18,6 +18,12 @@ class POETRYCARNAGE_API ASS_GameMode : public AGameModeBase
 	GENERATED_BODY()
 
 public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		PlayMode Mode;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		TArray<class USS_SettingsData*> ModeSettings;
+
 	UPROPERTY(BlueprintReadWrite)
 		class ASS_PlayerCharacter* PlayerHolder;
 
@@ -41,4 +47,7 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 		bool HasGameTags(const TArray<GameTags>& tagList) const;
+
+	UFUNCTION(BlueprintCallable)
+		USS_SettingsData* GetRelevantSettingsData();
 };
