@@ -5,6 +5,14 @@
 #include "CoreMinimal.h"
 
 UENUM(BlueprintType)
+enum class PlayMode : uint8
+{
+	None = 0,
+	Story = 1,
+	Vibe = 2,
+};
+
+UENUM(BlueprintType)
 enum class NPCMood : uint8
 {
 	None = 0,
