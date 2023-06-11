@@ -47,6 +47,7 @@ enum class GameTags : uint8
 	None = 0,
 	OOI_Manequin = 1,
 	OOI_CandleObj = 2,
+	BK_Muters = 3,
 };
 
 UENUM(BlueprintType)
